@@ -11,22 +11,22 @@ class TestHello(unittest.TestCase):
 
     def test_hello(self):
         rv = self.app.get('/')
-        print "first test"
-        print "=========="
-        print "testing site is up and returning code 200"
+        print ("first test")
+        print ("==========")
+        print ("testing site is up and returning code 200")
         self.assertEqual(rv.status, '200 OK')
-        print "========="
+        print ("=========")
 
     def test_hits(self):
         rv = self.app.get('/')
-        print "second test"
-        print "==========="
-        print "data from site is:"
+        print ("second test")
+        print ("===========")
+        print ("data from site is:")
         print (rv.data)
         cache = redis.Redis(host='redis', port=6379, decode_responses=True)
         x='Hello World! I have been visited {} times.\n'.format(cache.get('hits'))
         self.assertEqual(rv.data.decode("utf-8"), x)
-        print "============"
+        print ("============")
 
 
 if __name__ == '__main__':
