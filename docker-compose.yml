@@ -9,6 +9,8 @@ services:
           ipv4_address: "172.16.1.100"
   redis:
     image: "redis:alpine"
+    networks:
+      global:
 
 networks:
     global:
