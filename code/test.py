@@ -1,4 +1,3 @@
-cat <<-'TEST_CASES' > test.py
 #!/usr/bin/env python
 import unittest
 import webapp
@@ -13,7 +12,7 @@ class TestHello(unittest.TestCase):
     def test_hello(self):
         rv = self.app.get('/')
         self.assertEqual(rv.status, '200 OK')
-    
+
     def test_hits(self):
         rv = self.app.get('/')
         print (rv.data)
@@ -24,5 +23,3 @@ class TestHello(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-    
-TEST_CASES
