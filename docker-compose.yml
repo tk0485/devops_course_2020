@@ -4,6 +4,6 @@ services:
     build: .
     ports:
       - "5000:5000"
-    network: bridge
+    network_mode: bridge
   redis:
     image: "redis:alpine"
