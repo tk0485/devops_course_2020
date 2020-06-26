@@ -9,7 +9,7 @@
           version: '2'
           services:
             web:
-              build: "{{ playbook_dir }}/."
+              build: .
               ports:
                 - "5000:5000"
             redis:
