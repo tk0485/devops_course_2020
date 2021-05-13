@@ -2,7 +2,6 @@ FROM python
 RUN apt update && \
     apt install ssh -y && \
     apt install default-jre -y && \
-    apt install default-jdk -y && \
     apt-get -qq clean    \
     && rm -rf /var/lib/apt/lists/*
 RUN useradd -ms /bin/bash jenkins
